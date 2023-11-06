@@ -1,0 +1,33 @@
+@startuml
+class Game{
+    game_state:bool
+    berry_pos:list
+
+
+    make_berry()    
+    start_screen()
+    game_loop()
+    handle_player_input()
+    snakehead_on_berry()
+}
+class Board{
+    width:int
+    length:int
+
+    draw_board()
+}
+
+
+class Snake{
+    snake_position:list
+
+    test_for_snake_crash()
+    update_snake_position()
+    feed_snake()
+}
+
+Game <-- Board
+Game <-- Snake
+
+
+@enduml

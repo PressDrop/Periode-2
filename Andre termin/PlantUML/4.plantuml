@@ -1,0 +1,25 @@
+Class Fagbok{
+    fagområde:str
+}
+Class Skjønliterær{
+    sjanger:str
+}
+Bok <-- Skjønliterær
+Bok <-- Fagbok
+Class Bok{
+    forfatter: list
+    navn: str
+    ISBNNummer: int
+    utgivelsesår: int
+    baksidetekst: str
+    sjanger: str
+}
+Class Bokhandel{
+    regitrerte_bøker: list
+    sjønnlitterær: list
+    sakprosa: list
+    registrer_bok(enbok: Bok)
+}
+
+Fagbok -up->Bokhandel:registrer_bok(enbok)
+Skjønliterær -up->Bokhandel:registrer_bok(enbok)
